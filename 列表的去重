@@ -1,0 +1,12 @@
+#列表的去重
+def get_unique_llist(list1):
+    result = []
+    for item in list1:
+        if item not in result:
+            result.append(item)
+    return result
+
+list1 = [10,20,30,10,20]
+print(f"list1 = {list1} ,list2 = ",get_unique_llist(list1))
+#调用两个函数也可以实现
+print(f"list1 = {list1} ,list2 = ",list(set(list1)))
