@@ -1,0 +1,9 @@
+def get_even_numbers(begin, end):
+    result = []
+    for i in range(begin, end):
+        if i%2 == 0:
+            result.append(i)
+    return result
+begin = int(input())
+end = int(input())
+print(f"begin = {begin}, end = {end}, even numbers:", get_even_numbers(begin, end))
