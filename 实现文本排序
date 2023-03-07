@@ -1,0 +1,27 @@
+def read_file():
+    result = []
+    with open("101.txt") as fin:
+        for line in fin:
+            line = line[:-1]#去掉每列的换行符
+            result.append(line.split(" "))
+    return result
+
+def sort_grades(datas):
+    return sorted(datas, 
+        key= lambda x:int(x[2]),
+        reverse=True)
+    return datas
+
+def write_file(datas):
+    with open("101_output.txt","w")  as fout:
+        for data in datas:
+            fout.write(",".join(data)+"\n")
+
+#数据接收
+datas = read_file()
+print(datas)
+#排序数据
+datas = sort_grades(datas)
+print(datas)
+#写出文件
+write_file(datas)
