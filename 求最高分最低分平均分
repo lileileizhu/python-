@@ -1,0 +1,28 @@
+def get_grades():
+    result = []
+    with open("101.txt") as fin:
+        for line in fin:
+            line = line[:-1]#去掉换行符
+            result.append(line.split(" "))
+    return result
+
+def sort_grades(datas):
+    return sorted(datas, 
+            key = lambda x : int(x[2]),
+            reverse= True )#实现排序
+
+def output_grades(datas):
+    nums = 0
+    x = 0
+    for i in datas:
+        nums += int(i[-1])
+        x += 1
+    x = nums/x
+    print(f"最高分 = {datas[0][-1]}，最低分是 = {datas[-1][-1]}, 平均分是 = {x}")
+
+# 读取文件
+datas = get_grades()
+#数据排序
+datas = sort_grades(datas)
+#输出最高分最低分和平均分
+output_grades(datas)
